@@ -9,7 +9,7 @@ export default ({ navigation }) => {
       <Text
         style={{color: colors.link}}
         onPress={() => navigation.push("Home")}
-      >Goto Options Screen</Text>
+      >Goto Home Screen</Text>
     </View>
   );
 }
