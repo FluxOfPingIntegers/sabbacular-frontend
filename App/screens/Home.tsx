@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import colors from "../constants/colors";
 import { MainStackParamList } from '../constants/types';
+import colors from "../constants/colors";
 
 type HomeScreenProps = NativeStackScreenProps<MainStackParamList, "Home">
 

@@ -1,9 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
+import { MainStackParamList } from '../constants/types';
 import colors from "../constants/colors";
 
-export default ({ navigation }) => {
+type OptionsScreenProps = NativeStackScreenProps<MainStackParamList, "Options">
+
+const Options: React.FC<OptionsScreenProps> = ({ navigation }) => {
   return (
     <View style={styles.textContainer}>
       <Text
@@ -21,3 +25,5 @@ const styles = StyleSheet.create({
     alignItems: "center"
   }
 });
+
+export default Options
