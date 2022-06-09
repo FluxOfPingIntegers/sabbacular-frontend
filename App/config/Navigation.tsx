@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { MainStackParamList } from '../constants/types';
 import Home from '../screens/Home';
 import Options from '../screens/Options';
+import SignIn from '../screens/SignIn';
 
 const MainStack = createStackNavigator<MainStackParamList>();
 const MainStackScreen = () => (
@@ -17,6 +18,11 @@ const MainStackScreen = () => (
     <MainStack.Screen
       name="Options" 
       component={Options} 
+      options={{ headerShown: false,}} 
+    />
+    <MainStack.Screen
+      name="SignIn" 
+      component={SignIn} 
       options={{ headerShown: false,}} 
     />
   </MainStack.Navigator>
