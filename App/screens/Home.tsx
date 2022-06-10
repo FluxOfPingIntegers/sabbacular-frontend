@@ -9,16 +9,14 @@ type HomeScreenProps = NativeStackScreenProps<MainStackParamList, "Home">
 
 const Home: React.FC<HomeScreenProps> = ({ navigation }) => {
   return (
-    <View style={styles.textContainer}>
-      <Text
-        style={{color: colors.link}}
-        onPress={() => navigation.push("SignIn")}
-      >Sign In</Text>
-      <Text
-        style={{color: colors.link}}
-        onPress={() => navigation.push("Options")}
-      >Goto Options Screen</Text>
-    </View>
+    <>
+      <View style={styles.textContainer}>
+        <Text
+          style={{color: colors.link}}
+          onPress={() => navigation.push("Options")}
+        >Goto Options Screen</Text>
+      </View>
+    </>
   );
 }
 
