@@ -1,9 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Entypo } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import { MainStackParamList } from '../constants/types';
 import Home from '../screens/Home';
@@ -11,6 +9,7 @@ import Options from '../screens/Options';
 import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import HeaderButton from '../components/HeaderButton';
+import HeaderIcon from '../components/HeaderIcon';
 import colors from '../constants/colors';
 
 const MainStack = createStackNavigator<MainStackParamList>();
@@ -33,6 +32,7 @@ const MainStackScreen = () => (
           }>
             <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign In"/>
             <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
+            <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" align="right" />
           </View>
         ),
       })}} 
