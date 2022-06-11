@@ -24,11 +24,17 @@ const MainStackScreen = () => (
         return ({
         title: route.params,
         header: () => (
-          <View style={{flex: 1, flexDirection: "row", backgroundColor: colors.teal, borderBottomColor: "green"}}>
+          <View style={
+            {
+              flex: 1, 
+              flexDirection: "row", 
+              backgroundColor: colors.teal, 
+            }
+          }>
             <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign In"/>
             <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
           </View>
-        )
+        ),
       })}} 
     />
     <MainStack.Screen

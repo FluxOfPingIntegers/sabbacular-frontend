@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 
 import colors from '../constants/colors';
 
-type HeaderButtonProps = { onHeaderButtonPress: (a: string) => any; name: string}
+type HeaderButtonProps = { onHeaderButtonPress: (a: string) => void; name: string}
 
 const HeaderButton: React.FC<HeaderButtonProps> = ( { onHeaderButtonPress, name } ) => {
   const linkRoute = name.split(" ").join("")
@@ -12,9 +12,9 @@ const HeaderButton: React.FC<HeaderButtonProps> = ( { onHeaderButtonPress, name 
   return (
     <TouchableOpacity
     onPress={() => onHeaderButtonPress(linkRoute)}
-    style={{ paddingHorizontal: 10, justifyContent: "center" }} 
+    style={{ paddingHorizontal: 10, justifyContent: "center", paddingVertical: "5%" }} 
   >
-    <Text style={{fontSize: 20, color: colors.orange }}>{name}</Text>
+    <Text style={{fontSize: 20, color: colors.offWhite }}>{name}</Text>
   </TouchableOpacity>
   )
 }
