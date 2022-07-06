@@ -8,9 +8,7 @@ import Home from '../screens/Home';
 import Options from '../screens/Options';
 import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
-import HeaderButton from '../components/HeaderButton';
-import HeaderIcon from '../components/HeaderIcon';
-import colors from '../constants/colors';
+import NavBar from '../components/NavBar';
 
 const MainStack = createStackNavigator<MainStackParamList>();
 const MainStackScreen = () => (
@@ -19,32 +17,19 @@ const MainStackScreen = () => (
       name="Home" 
       component={Home}
       options={({ navigation, route }) => {
-        const onHeaderButtonPress = (a:string) => navigation.push(a) 
         return ({
         title: route.params,
-        header: () => (
-          <>
-          <View style={
-            {
-              flex: 1, 
-              flexDirection: "row", 
-              backgroundColor: colors.teal, 
-            }
-          }>
-              <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign In"/>
-              <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
-            <View style={{ alignSelf: "center", marginLeft: 'auto'}}>
-              <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" />
-            </View>
-          </View>
-          </>
-        ),
+        header: () => <NavBar navigation={navigation}/>,
       })}} 
     />
     <MainStack.Screen
       name="Options" 
       component={Options} 
-      options={{ headerShown: false,}} 
+      options={({ navigation, route }) => {
+        return ({
+        title: route.params,
+        header: () => <NavBar navigation={navigation}/>,
+      })}} 
     />
     <MainStack.Screen
       name="SignIn" 

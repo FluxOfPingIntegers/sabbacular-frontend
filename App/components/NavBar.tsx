@@ -1,0 +1,37 @@
+import React from "react";
+import { View } from 'react-native';
+
+import colors from "../constants/colors";
+import HeaderButton from "./HeaderButton";
+import HeaderIcon from "./HeaderIcon";
+
+type NavBarProps = { navigation: any}
+
+const NavBar: React.FC<NavBarProps> = ({navigation}) => {
+  const onHeaderButtonPress = (a:string) => navigation.push(a)
+
+  const guestNav = (
+    <>
+      <View style={
+        {
+          flex: 1, 
+          flexDirection: "row", 
+          backgroundColor: colors.teal, 
+        }
+          }>
+        <View style={{ alignSelf: "center", marginRight: 'auto', alignContent:}}>
+          <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="home" linkRoute="Home" />
+        </View>
+        <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign In"/>
+        <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
+        <View style={{ alignSelf: "center", marginLeft: 'auto'}}>
+          <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" />
+        </View>
+      </View>
+    </>
+  )
+
+  return guestNav
+}
+
+export default NavBar
