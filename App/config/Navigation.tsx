@@ -23,6 +23,7 @@ const MainStackScreen = () => (
         return ({
         title: route.params,
         header: () => (
+          <>
           <View style={
             {
               flex: 1, 
@@ -30,10 +31,13 @@ const MainStackScreen = () => (
               backgroundColor: colors.teal, 
             }
           }>
-            <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign In"/>
-            <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
-            <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" align="right" />
+              <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign In"/>
+              <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
+            <View style={{ alignSelf: "center", marginLeft: 'auto'}}>
+              <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" />
+            </View>
           </View>
+          </>
         ),
       })}} 
     />
