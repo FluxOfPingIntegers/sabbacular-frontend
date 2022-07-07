@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 
 import colors from "../constants/colors";
 import HeaderButton from "./HeaderButton";
@@ -19,7 +19,7 @@ const NavBar: React.FC<NavBarProps> = ({navigation}) => {
           backgroundColor: colors.teal, 
         }
           }>
-        <View style={{ alignSelf: "center", marginRight: 'auto', alignContent:}}>
+        <View style={{ alignSelf: "center", marginRight: 'auto'}}>
           <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="home" linkRoute="Home" />
         </View>
         <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign In"/>

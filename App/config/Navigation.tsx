@@ -34,12 +34,20 @@ const MainStackScreen = () => (
     <MainStack.Screen
       name="SignIn" 
       component={SignIn} 
-      options={{ headerShown: false,}} 
+      options={({ navigation, route }) => {
+        return ({
+        title: route.params,
+        header: () => <NavBar navigation={navigation}/>,
+      })}}
     />
     <MainStack.Screen
       name="SignUp" 
       component={SignUp} 
-      options={{ headerShown: false,}} 
+      options={({ navigation, route }) => {
+        return ({
+        title: route.params,
+        header: () => <NavBar navigation={navigation}/>,
+      })}}
     />
   </MainStack.Navigator>
 );
