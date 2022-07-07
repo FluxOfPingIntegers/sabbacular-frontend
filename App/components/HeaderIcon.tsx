@@ -16,7 +16,7 @@ const HeaderIcon: React.FC<HeaderIconProps> = ( { onHeaderButtonPress, icon, lin
   return (
       <TouchableOpacity
       onPress={() => onHeaderButtonPress(linkRoute)}
-      style={{ paddingHorizontal: 20, justifyContent: "center", paddingVertical: "5%"}} 
+      style={{ paddingHorizontal: 20, paddingVertical: "5%"}} 
       >
         <Entypo name={icon} size={20} color={colors.offWhite}/>
       </TouchableOpacity>
