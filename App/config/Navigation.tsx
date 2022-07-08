@@ -11,6 +11,7 @@ import SignUp from '../screens/SignUp';
 import NavBar from '../components/NavBar';
 
 const MainStack = createStackNavigator<MainStackParamList>();
+const appTitle = "Sabbacular";
 const MainStackScreen = () => (
   <MainStack.Navigator>
     <MainStack.Screen
@@ -18,7 +19,7 @@ const MainStackScreen = () => (
       component={Home}
       options={({ navigation, route }) => {
         return ({
-        title: route.params,
+        title: appTitle,
         header: () => <NavBar navigation={navigation} title={"Home"}/>,
       })}} 
     />
@@ -27,7 +28,7 @@ const MainStackScreen = () => (
       component={Options} 
       options={({ navigation, route }) => {
         return ({
-        title: route.params,
+        title: appTitle,
         header: () => <NavBar navigation={navigation} title={"Options"}/>,
       })}} 
     />
@@ -36,7 +37,7 @@ const MainStackScreen = () => (
       component={SignIn} 
       options={({ navigation, route }) => {
         return ({
-        title: route.params,
+        title: appTitle,
         header: () => <NavBar navigation={navigation} title={"Sign In"}/>,
       })}}
     />
@@ -45,7 +46,7 @@ const MainStackScreen = () => (
       component={SignUp} 
       options={({ navigation, route }) => {
         return ({
-        title: route.params,
+        title: appTitle,
         header: () => <NavBar navigation={navigation} title={"Sign Up"}/>,
       })}}
     />
