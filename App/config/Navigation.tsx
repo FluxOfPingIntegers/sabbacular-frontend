@@ -19,7 +19,7 @@ const MainStackScreen = () => (
       options={({ navigation, route }) => {
         return ({
         title: route.params,
-        header: () => <NavBar navigation={navigation}/>,
+        header: () => <NavBar navigation={navigation} title={"Home"}/>,
       })}} 
     />
     <MainStack.Screen
@@ -28,7 +28,7 @@ const MainStackScreen = () => (
       options={({ navigation, route }) => {
         return ({
         title: route.params,
-        header: () => <NavBar navigation={navigation}/>,
+        header: () => <NavBar navigation={navigation} title={"Options"}/>,
       })}} 
     />
     <MainStack.Screen
@@ -37,7 +37,7 @@ const MainStackScreen = () => (
       options={({ navigation, route }) => {
         return ({
         title: route.params,
-        header: () => <NavBar navigation={navigation}/>,
+        header: () => <NavBar navigation={navigation} title={"Sign In"}/>,
       })}}
     />
     <MainStack.Screen
@@ -46,7 +46,7 @@ const MainStackScreen = () => (
       options={({ navigation, route }) => {
         return ({
         title: route.params,
-        header: () => <NavBar navigation={navigation}/>,
+        header: () => <NavBar navigation={navigation} title={"Sign Up"}/>,
       })}}
     />
   </MainStack.Navigator>

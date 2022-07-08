@@ -1,30 +1,23 @@
 import React from "react";
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import colors from "../constants/colors";
 import HeaderButton from "./HeaderButton";
 import HeaderIcon from "./HeaderIcon";
 
-type NavBarProps = { navigation: any}
+type NavBarProps = { navigation: any, title: "Home" | "Options" | "Sign In" | "Sign Up" }
 
-const NavBar: React.FC<NavBarProps> = ({navigation}) => {
+const NavBar: React.FC<NavBarProps> = ({navigation, title}) => {
   const onHeaderButtonPress = (a:string) => navigation.push(a)
 
   const guestNav = (
-    <View style={
-      {
-        flex: 1, 
-        flexDirection: "row", 
-        backgroundColor: colors.teal, 
-      }
-        }>
-      <View style={{ alignSelf: "center", marginRight: 'auto', flexDirection: "row"}}>
+    <View style={ styles.navContainer }>
+      <View style={ styles.leftNavContainer }>
         <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="home" linkRoute="Home" />
         <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
       </View>
-      <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign In"/>
-      <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
-      <View style={{ alignSelf: "center", marginLeft: 'auto', flexDirection: "row"}}>
+      <Text style={ styles.navTitleText }>{title}</Text>
+      <View style={ styles.rightNavContainer }>
         <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" />
       </View>
     </View>
@@ -32,5 +25,29 @@ const NavBar: React.FC<NavBarProps> = ({navigation}) => {
 
   return guestNav
 }
+
+const styles = StyleSheet.create({
+  leftNavContainer: {
+    alignSelf: "center", 
+    marginRight: 'auto', 
+    flexDirection: "row"
+  },
+  navContainer: {
+    flex: 1, 
+    flexDirection: "row", 
+    backgroundColor: colors.teal, 
+  },
+  navTitleText: {
+    fontSize: 20, 
+    color: colors.offWhite, 
+    justifyContent: "center", 
+    alignSelf: "center" 
+  },
+  rightNavContainer: { 
+    alignSelf: "center", 
+    marginLeft: 'auto', 
+    flexDirection: "row"
+  },
+})
 
 export default NavBar
