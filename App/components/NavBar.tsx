@@ -16,7 +16,9 @@ const NavBar: React.FC<NavBarProps> = ({navigation, title}) => {
         <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="home" linkRoute="Home" />
         <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
       </View>
-      <Text style={ styles.navTitleText }>{title}</Text>
+      <View style={ styles.centerNavContainer}>
+        <Text style={ styles.navTitleText }>{title}</Text>
+      </View>
       <View style={ styles.rightNavContainer }>
         <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" />
       </View>
@@ -27,7 +29,13 @@ const NavBar: React.FC<NavBarProps> = ({navigation, title}) => {
 }
 
 const styles = StyleSheet.create({
+  centerNavContainer: {
+    flex: 2,
+    alignSelf: "center",
+    marginHorizontal: "center"
+  },
   leftNavContainer: {
+    flex: 1,
     alignSelf: "center", 
     marginRight: 'auto', 
     flexDirection: "row"
@@ -40,13 +48,13 @@ const styles = StyleSheet.create({
   navTitleText: {
     fontSize: 20, 
     color: colors.offWhite, 
-    justifyContent: "center", 
-    alignSelf: "center" 
+    textAlign: "center"
   },
   rightNavContainer: { 
+    flex: 1,
     alignSelf: "center", 
     marginLeft: 'auto', 
-    flexDirection: "row"
+    flexDirection: "row-reverse"
   },
 })
 

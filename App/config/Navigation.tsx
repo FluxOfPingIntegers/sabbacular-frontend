@@ -17,7 +17,7 @@ const MainStackScreen = () => (
     <MainStack.Screen
       name="Home" 
       component={Home}
-      options={({ navigation, route }) => {
+      options={({ navigation }) => {
         return ({
         title: appTitle,
         header: () => <NavBar navigation={navigation} title={"Home"}/>,
@@ -26,7 +26,7 @@ const MainStackScreen = () => (
     <MainStack.Screen
       name="Options" 
       component={Options} 
-      options={({ navigation, route }) => {
+      options={({ navigation }) => {
         return ({
         title: appTitle,
         header: () => <NavBar navigation={navigation} title={"Options"}/>,
@@ -35,7 +35,7 @@ const MainStackScreen = () => (
     <MainStack.Screen
       name="SignIn" 
       component={SignIn} 
-      options={({ navigation, route }) => {
+      options={({ navigation }) => {
         return ({
         title: appTitle,
         header: () => <NavBar navigation={navigation} title={"Sign In"}/>,
@@ -44,7 +44,7 @@ const MainStackScreen = () => (
     <MainStack.Screen
       name="SignUp" 
       component={SignUp} 
-      options={({ navigation, route }) => {
+      options={({ navigation }) => {
         return ({
         title: appTitle,
         header: () => <NavBar navigation={navigation} title={"Sign Up"}/>,
