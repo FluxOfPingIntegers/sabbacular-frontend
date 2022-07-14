@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { LinkRoutes } from '../constants/types';
+import { PageRoutes } from '../constants/types';
 
-interface LinkProps {navigation: any, route: LinkRoutes, linkText: string, linkColor: string}
+interface LinkProps {navigation: any, route: PageRoutes, linkText: string, linkColor: string}
 
 const CustomLink: React.FC<LinkProps> = ({ navigation, route, linkText, linkColor }) => {
   return (

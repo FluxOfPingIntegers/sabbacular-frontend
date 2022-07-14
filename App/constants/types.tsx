@@ -6,6 +6,8 @@ export type MainStackParamList = {
   Login: undefined;
 }
 
-export type PageTitles = "Home" | "Options" | "Sign In" | "Sign Up" | "Login";
+type CommonPages = "Home" | "Options" | "Login" ;
 
-export type LinkRoutes = "Home" | "Options" | "SignIn" | "SignUp" | "Login";
+export type PageTitles = CommonPages | "Sign In" | "Sign Up"
+
+export type PageRoutes = CommonPages | "SignIn" | "SignUp"
