@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-type LinkRoutes = "Home" | "Options" | "SignIn" | "SignUp";
+import { LinkRoutes } from '../constants/types';
+
 interface LinkProps {navigation: any, route: LinkRoutes, linkText: string, linkColor: string}
 
 const CustomLink: React.FC<LinkProps> = ({ navigation, route, linkText, linkColor }) => {

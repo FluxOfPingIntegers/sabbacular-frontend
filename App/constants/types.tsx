@@ -4,3 +4,5 @@ export type MainStackParamList = {
   SignIn: undefined;
   SignUp: undefined;
 }
+
+export type LinkRoutes = "Home" | "Options" | "SignIn" | "SignUp";
