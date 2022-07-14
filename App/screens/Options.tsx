@@ -11,19 +11,20 @@ type OptionsScreenProps = NativeStackScreenProps<MainStackParamList, "Options">
 
 const Options: React.FC<OptionsScreenProps> = ({ navigation }) => {
 
-  const DATA: {id: string, title: LinkRoutes}[] = [
+  const DATA: {id: string, title: string}[] = [
     {
       id: "1",
-      title: "SignIn"
+      title: "Sign In"
     },
     {
       id: "2",
-      title: "SignUp"
+      title: "Sign Up"
     },
   ]
 
-  const renderItem: React.FC<{item: {title: LinkRoutes, id: string} }> = ({item}) => {
-    return <RowItem title={item.title} navigation={navigation} />
+  const renderItem: React.FC<{item: {title: string, id: string} }> = ({item}) => {
+    const route = item.title.split(" ").join("")
+    return <RowItem title={item.title} navigation={navigation} route={route}/>
   }
 
   return (

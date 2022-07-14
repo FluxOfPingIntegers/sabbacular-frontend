@@ -4,15 +4,14 @@ import colors from "../constants/colors";
 
 import { LinkRoutes } from "../constants/types";
 
-type RowItemProps = {title: LinkRoutes, navigation: any}
+type RowItemProps = {title: string, route: string, navigation: any}
 
-export const RowItem: (obj: RowItemProps) => ReactElement = ({title, navigation}) => {
-  const onPress = (title:string) => {
-    const route = title.split(" ").join("")
+export const RowItem: (obj: RowItemProps) => ReactElement = ({title, route, navigation}) => {
+  const onPress = (route: string) => {
     return navigation.push(route)
   }
   return (
-    <TouchableOpacity style={styles.container} onPress={() => onPress(title)}>
+    <TouchableOpacity style={styles.container} onPress={() => onPress(route)}>
       <Text>{title}</Text>
     </TouchableOpacity>
   )
@@ -26,7 +25,12 @@ export const RowSeparator = () => {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      paddingHorizontal: 20,
+      paddingVertical: 16,
+      flexDirection: 'row',
+      alignItems: "center",
+      justifyContent: "space-between",
+      backgroundColor: "white",
     },
     separator: {
       backgroundColor: colors.border,
