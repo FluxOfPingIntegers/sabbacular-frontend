@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
 
 import colors from "../constants/colors";
+import { LinkRoutes } from "../constants/types";
 import HeaderButton from "./HeaderButton";
 import HeaderIcon from "./HeaderIcon";
 
