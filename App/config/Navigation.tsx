@@ -5,7 +5,7 @@ import { View } from 'react-native';
 
 import { MainStackParamList } from '../constants/types';
 import Home from '../screens/Home';
-import Options from '../screens/Options';
+import Login from '../screens/Login';
 import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import NavBar from '../components/NavBar';
@@ -24,12 +24,12 @@ const MainStackScreen = () => (
       })}} 
     />
     <MainStack.Screen
-      name="Options" 
-      component={Options} 
+      name="Login" 
+      component={Login} 
       options={({ navigation }) => {
         return ({
         title: appTitle,
-        header: () => <NavBar navigation={navigation} title={"Options"}/>,
+        header: () => <NavBar navigation={navigation} title={"Login"}/>,
       })}} 
     />
     <MainStack.Screen

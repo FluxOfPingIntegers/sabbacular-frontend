@@ -3,8 +3,9 @@ export type MainStackParamList = {
   Options: undefined;
   SignIn: undefined;
   SignUp: undefined;
+  Login: undefined;
 }
 
-export type PageTitles = "Home" | "Options" | "Sign In" | "Sign Up";
+export type PageTitles = "Home" | "Options" | "Sign In" | "Sign Up" | "Login";
 
-export type LinkRoutes = "Home" | "Options" | "SignIn" | "SignUp";
+export type LinkRoutes = "Home" | "Options" | "SignIn" | "SignUp" | "Login";

@@ -7,9 +7,9 @@ import colors from "../constants/colors";
 import {RowItem, RowSeparator} from "../components/RowItem";
 
 
-type OptionsScreenProps = NativeStackScreenProps<MainStackParamList, "Options">
+type LoginScreenProps = NativeStackScreenProps<MainStackParamList, "Login">
 
-const Options: React.FC<OptionsScreenProps> = ({ navigation }) => {
+const Login: React.FC<LoginScreenProps> = ({ navigation }) => {
 
   const DATA: {id: string, title: PageTitles}[] = [
     {
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Options
+export default Login

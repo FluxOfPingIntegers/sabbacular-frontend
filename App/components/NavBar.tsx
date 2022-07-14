@@ -15,7 +15,7 @@ const NavBar: React.FC<NavBarProps> = ({navigation, title}) => {
     <View style={ styles.navContainer }>
       <View style={ styles.leftNavContainer }>
         <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="home" linkRoute="Home" />
-        <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Sign Up"/>
+        <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Login" route="Login"/>
       </View>
       <View style={ styles.centerNavContainer}>
         <Text style={ styles.navTitleText }>{title}</Text>
