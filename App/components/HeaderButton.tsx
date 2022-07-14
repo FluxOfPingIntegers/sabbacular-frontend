@@ -3,8 +3,9 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Text } from 'react-native';
 
 import colors from '../constants/colors';
+import { PageTitles } from '../constants/types';
 
-type HeaderButtonProps = { onHeaderButtonPress: (a: string) => void; name: string}
+type HeaderButtonProps = { onHeaderButtonPress: (a: string) => void; name: PageTitles}
 
 const HeaderButton: React.FC<HeaderButtonProps> = ( { onHeaderButtonPress, name } ) => {
   const linkRoute = name.split(" ").join("")

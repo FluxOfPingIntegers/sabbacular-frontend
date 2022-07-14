@@ -2,7 +2,6 @@ import React, { ReactElement} from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import colors from "../constants/colors";
 
-import { LinkRoutes } from "../constants/types";
 
 type RowItemProps = {title: string, route: string, navigation: any}
 

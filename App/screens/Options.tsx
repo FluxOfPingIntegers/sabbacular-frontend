@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { LinkRoutes, MainStackParamList } from '../constants/types';
+import { PageTitles, MainStackParamList } from '../constants/types';
 import colors from "../constants/colors";
 import {RowItem, RowSeparator} from "../components/RowItem";
 
@@ -11,7 +11,7 @@ type OptionsScreenProps = NativeStackScreenProps<MainStackParamList, "Options">
 
 const Options: React.FC<OptionsScreenProps> = ({ navigation }) => {
 
-  const DATA: {id: string, title: string}[] = [
+  const DATA: {id: string, title: PageTitles}[] = [
     {
       id: "1",
       title: "Sign In"

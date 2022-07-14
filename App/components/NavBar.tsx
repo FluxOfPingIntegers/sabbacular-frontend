@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
 
 import colors from "../constants/colors";
-import { LinkRoutes } from "../constants/types";
+import { PageTitles } from "../constants/types";
 import HeaderButton from "./HeaderButton";
 import HeaderIcon from "./HeaderIcon";
 
-type NavBarProps = { navigation: any, title: "Home" | "Options" | "Sign In" | "Sign Up" }
+type NavBarProps = { navigation: any, title: PageTitles }
 
 const NavBar: React.FC<NavBarProps> = ({navigation, title}) => {
   const onHeaderButtonPress = (a:string) => navigation.push(a)
