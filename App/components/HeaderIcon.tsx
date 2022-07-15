@@ -3,11 +3,12 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Entypo } from '@expo/vector-icons';
 
 import colors from '../constants/colors';
+import { PageRoutes } from '../constants/types';
 
 type HeaderIconProps = { 
-  onHeaderButtonPress: (a: string) => void;
+  onHeaderButtonPress: (a: PageRoutes | "back") => void;
   icon: keyof typeof Entypo.glyphMap; 
-  linkRoute: string;
+  linkRoute: PageRoutes | "back";
 }
 
 const HeaderIcon: React.FC<HeaderIconProps> = ( { onHeaderButtonPress, icon, linkRoute } ) => {

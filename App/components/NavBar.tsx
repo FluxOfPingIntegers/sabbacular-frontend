@@ -9,16 +9,18 @@ import HeaderIcon from "./HeaderIcon";
 type NavBarProps = { navigation: any, title: PageTitles }
 
 const NavBar: React.FC<NavBarProps> = ({navigation, title}) => {
-  const onHeaderButtonPress = (a:string) => navigation.push(a)
+  const onHeaderButtonPress = (a:string) => a === "back" ? navigation.pop() : navigation.push(a)
 
   const loginIcon = <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Login" route="Login"/>
-  const loginBackIcon = <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="arrow-left" linkRoute="Home" />
+  const loginBackIcon = <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="arrow-left" linkRoute="back" />
   const optionsIcon = <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" />
-  const OptionsBackIcon = <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="arrow-right" linkRoute="Home" />
+  const OptionsBackIcon = <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="cross" linkRoute="back" />
 
   const iconState = (title: PageTitles, position: "left" | "right") => {
+    const loginTest = () => title === "Login" || title === "Sign In" || title === "Sign Up"
+
     if (position === "left") {
-      return title === "Login" ? loginBackIcon : loginIcon;
+      return loginTest() ? loginBackIcon : loginIcon;
     } else {
       return title === "Options" ? OptionsBackIcon : optionsIcon;
     }
