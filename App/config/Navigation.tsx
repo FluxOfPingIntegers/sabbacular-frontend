@@ -9,6 +9,7 @@ import Login from '../screens/Login';
 import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import NavBar from '../components/NavBar';
+import Options from '../screens/Options';
 
 const MainStack = createStackNavigator<MainStackParamList>();
 const appTitle = "Sabbacular";
@@ -30,6 +31,15 @@ const MainStackScreen = () => (
         return ({
         title: appTitle,
         header: () => <NavBar navigation={navigation} title={"Login"}/>,
+      })}} 
+    />
+    <MainStack.Screen
+      name="Options" 
+      component={Options} 
+      options={({ navigation }) => {
+        return ({
+        title: appTitle,
+        header: () => <NavBar navigation={navigation} title={"Options"}/>,
       })}} 
     />
     <MainStack.Screen
