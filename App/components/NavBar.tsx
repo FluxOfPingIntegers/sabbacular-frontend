@@ -11,22 +11,35 @@ type NavBarProps = { navigation: any, title: PageTitles }
 const NavBar: React.FC<NavBarProps> = ({navigation, title}) => {
   const onHeaderButtonPress = (a:string) => navigation.push(a)
 
-  const guestNav = (
+  const loginIcon = <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Login" route="Login"/>
+  const loginBackIcon = <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="arrow-left" linkRoute="Home" />
+  const optionsIcon = <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" />
+  const OptionsBackIcon = <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="arrow-right" linkRoute="Home" />
+
+  const iconState = (title: PageTitles, position: "left" | "right") => {
+    if (position === "left") {
+      return title === "Login" ? loginBackIcon : loginIcon;
+    } else {
+      return title === "Options" ? OptionsBackIcon : optionsIcon;
+    }
+  }
+  const leftIconState = iconState(title, "left");
+  const rightIconState = iconState(title, "right");
+
+  return (
     <View style={ styles.navContainer }>
       <View style={ styles.leftNavContainer }>
         <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="home" linkRoute="Home" />
-        <HeaderButton onHeaderButtonPress={onHeaderButtonPress} name="Login" route="Login"/>
+        {leftIconState}
       </View>
       <View style={ styles.centerNavContainer}>
         <Text style={ styles.navTitleText }>{title}</Text>
       </View>
       <View style={ styles.rightNavContainer }>
-        <HeaderIcon onHeaderButtonPress={onHeaderButtonPress} icon="menu" linkRoute="Options" />
+        {rightIconState}
       </View>
     </View>
   )
-
-  return guestNav
 }
 
 const styles = StyleSheet.create({
