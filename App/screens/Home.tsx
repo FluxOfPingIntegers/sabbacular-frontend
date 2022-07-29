@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { MainStackParamList } from '../constants/types';
@@ -10,11 +10,10 @@ type HomeScreenProps = NativeStackScreenProps<MainStackParamList, "Home">
 const Home: React.FC<HomeScreenProps> = ({ navigation }) => {
   return (
     <>
-      <View style={styles.textContainer}>
-        <Text
-          style={{color: colors.link}}
-          onPress={() => navigation.push("Options")}
-        >Goto Options Screen</Text>
+      <View>
+        <View>
+          <Image source={require('../assets/Sabbacular-logos.jpeg')}></Image>
+        </View>
       </View>
     </>
   );

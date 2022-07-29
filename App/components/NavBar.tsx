@@ -41,8 +41,8 @@ const NavBar: React.FC<NavBarProps> = ({navigation, title}) => {
         {rightIconState}
       </View>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   centerNavContainer: {
