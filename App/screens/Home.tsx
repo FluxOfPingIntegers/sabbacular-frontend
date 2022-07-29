@@ -12,7 +12,7 @@ const Home: React.FC<HomeScreenProps> = ({ navigation }) => {
     <>
       <View>
         <View>
-          <Image source={require('../assets/Sabbacular-logos.jpeg')}></Image>
+          <Image source={require('../assets/Sabbacular-logos.jpeg')} />
         </View>
       </View>
     </>
