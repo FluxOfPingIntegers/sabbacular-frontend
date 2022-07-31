@@ -5,6 +5,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { MainStackParamList } from '../constants/types';
 import colors from "../constants/colors";
 
+
 type HomeScreenProps = NativeStackScreenProps<MainStackParamList, "Home">
 
 const Home: React.FC<HomeScreenProps> = ({ navigation }) => {
@@ -12,7 +13,7 @@ const Home: React.FC<HomeScreenProps> = ({ navigation }) => {
     <>
       <View>
         <View>
-          <Image source={require('../assets/images/sabbacular-logos.png')} />
+          <Image source={require('../assets/images/desert.jpg')} />
         </View>
       </View>
     </>

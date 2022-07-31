@@ -37,6 +37,7 @@ const SignIn: React.FC<SignInScreenProps> = ({ navigation }) => {
         placeholder={'password'} 
         onChangeText={setPassword}
         value={password}
+        secureTextEntry={true}
       />
       <View style={styles.button}>
         <Button 

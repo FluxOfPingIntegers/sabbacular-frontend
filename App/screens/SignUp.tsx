@@ -64,12 +64,14 @@ const SignUp: React.FC<SignUpScreenProps> = ({ navigation }) => {
         placeholder={'password'} 
         onChangeText={setPassword}
         value={password}
+        secureTextEntry={true}
       />
       <TextInput 
         style={styles.input}
         placeholder={'confirm password'} 
         onChangeText={setPasswordConfirm}
         value={passwordConfirm}
+        secureTextEntry={true}
       />
       <View style={styles.button}>
         <Button 
