@@ -12,3 +12,10 @@ web-build/
 
 # macOS
 .DS_Store
+
+app.config.js
+app.config.ts
+metro.config.js
+metro.config.ts
+webpack.config.js
+webpack.config.ts
