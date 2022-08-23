@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { MainStackParamList } from '../constants/types';
@@ -13,7 +13,13 @@ const Home: React.FC<HomeScreenProps> = ({ navigation }) => {
   return (
     <>
       <View style={styles.homeContainer}>
-          <Image source={require('../assets/images/sabbacular-logos.png')} style={styles.backgroundImage} />
+          <ImageBackground 
+            source={require('../assets/images/sabbacular-logos.png')} 
+            resizeMode="cover" 
+            style={styles.backgroundImage} 
+          >
+            
+          </ImageBackground>
       </View>
     </>
   );
