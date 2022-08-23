@@ -1,3 +1,10 @@
+export type CreateUserProps = {
+  username: string, 
+  usernameConfirm: string, 
+  password: string, 
+  passwordConfirm: string
+};
+
 export type MainStackParamList = {
   Home: undefined;
   Options: undefined;

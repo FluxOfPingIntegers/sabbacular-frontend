@@ -10,6 +10,7 @@ import {
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { MainStackParamList } from '../constants/types';
 import colors from '../constants/colors';
+import { createUser } from '../constants/apiService';
 import { NavigationHelpersContext } from '@react-navigation/native';
 
 
@@ -26,6 +27,13 @@ const SignUp: React.FC<SignUpScreenProps> = ({ navigation }) => {
   const onSignUpPressed = () => {
     if (username === usernameConfirm && password === passwordConfirm) {
       console.log("username and password confirmed!")
+      const createInfo = {
+        username: username, 
+        usernameConfirm: usernameConfirm, 
+        password: password, 
+        passwordConfirm: passwordConfirm
+      }
+      createUser(createInfo);
       navigation.push("Home");
     } else {
       Alert.alert(
