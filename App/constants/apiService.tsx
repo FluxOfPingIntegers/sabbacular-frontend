@@ -10,11 +10,11 @@ const urlPaths = {
 const url = urlPaths.root.development // change this depending on production OR development mode
 
 export const createUser = (createInfo: CreateUserProps) => {
-  fetch(`${url}create`, {
+  fetch(`${url}users`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       user: {
