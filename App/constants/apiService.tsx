@@ -12,6 +12,7 @@ const url = urlPaths.root.development // change this depending on production OR 
 export const createUser = (createInfo: CreateUserProps) => {
   fetch(`${url}users`, {
     method: 'POST',
+    mode: 'no-cors',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'
@@ -24,7 +25,7 @@ export const createUser = (createInfo: CreateUserProps) => {
   })
   .then(res => res.json())
   .then(json => {
-    console.log(json);
+    console.log('SUCCESS', json);
   })
   .catch(err => {
     console.log(err);
