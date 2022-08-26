@@ -29,10 +29,10 @@ const SignUp: React.FC<SignUpScreenProps> = ({ navigation }) => {
       console.log("username and password confirmed!")
       const createInfo = {
         username: username, 
-        usernameConfirm: usernameConfirm, 
         password: password, 
-        passwordConfirm: passwordConfirm
+        password_confirmation: passwordConfirm
       }
+      console.log('SignUp, onSignUpPressed, createInfo = ', createInfo)
       createUser(createInfo);
       navigation.push("Home");
     } else {

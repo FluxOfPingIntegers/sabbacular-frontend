@@ -1,8 +1,7 @@
 export type CreateUserProps = {
   username: string, 
-  usernameConfirm: string, 
   password: string, 
-  passwordConfirm: string
+  password_confirmation: string
 };
 
 export type MainStackParamList = {
